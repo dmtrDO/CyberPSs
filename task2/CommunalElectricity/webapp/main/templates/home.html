@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block header %}
+
+<div class="email-title">
+    <img src="{% static 'img/user.png' %}" title="{{ email }}">
+    <p title="{{ email }}">{{ email }}</p>
+</div>
+<a href="{% url 'logout' %}" class="header-button"><p>Вийти</p></a>
+
+{% endblock %}
+
+
+
+
+{% block content %}
+
+<div class="home-wrapper">
+    <div><a href="{% url 'add' %}" class="header-button"><p>Додати лічильник</p></a></div>
+    <div><a href="{% url 'send' %}" class="header-button"><p>Відправити показання</p></a></div>
+    <div><a href="{% url 'history' %}" class="header-button"><p>Переглянути історію</p></a></div>
+</div>
+
+{% endblock %}
+
+
+
+

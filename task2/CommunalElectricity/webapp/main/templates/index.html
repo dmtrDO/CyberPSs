@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+
+
+{% block header %}
+
+<a href="{% url 'registration' %}" class="header-button"><p>Реєстрація</p></a>
+<a href="{% url 'login' %}" class="header-button"><p>Авторизація</p></a>
+
+{% endblock %}
+
+
+
+{% block content %}
+
+<p>Цей сайт допомагає вести облік електроенергії
+для двофазних лічильників "День-Ніч".
+</p>
+<br>
+<p>
+    Тут ви можете:
+</p>
+<div>
+    <div class="able-section">
+        <div>
+            <p>Додавати електролічильники</p>
+        </div>
+        <div>
+            <img src="{% static 'img/calculate.png' %}" alt="">
+        </div>
+    </div>
+    <div class="able-section">
+        <div>
+            <p>Відправляти показники</p>
+        </div>
+        <div>
+            <img src="{% static 'img/calculate.png' %}" alt="">
+        </div>
+    </div>
+    <div class="able-section">
+        <div>
+            <p>Переглядати історію</p>
+        </div>
+        <div>
+            <img src="{% static 'img/watch.png' %}" alt="">
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+

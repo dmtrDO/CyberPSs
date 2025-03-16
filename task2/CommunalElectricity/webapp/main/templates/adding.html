@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block header %}
+
+<div class="email-title">
+    <img src="/static/img/user.png" title="{{ email }}">
+    <p title="{{ email }}">{{ email }}</p>
+</div>
+<a href="{% url 'home' %}" class="header-button"><p>Назад</p></a>
+
+{% endblock %}
+
+
+
+
+{% block content %}
+
+<form method="POST" class="form-adding" id="add-form" novalidate>
+    {% csrf_token %}
+    <p>Введіть номер електролічильника</p>
+    {{ form.number }}
+    <button type="submit" class="header-button">Додати</button>
+    <p class="add-form-error">{{ error }}</p>
+</form>
+
+
+<div class="interesting">
+    <a href="https://fakty.com.ua/ua/ukraine/20231127-yak-praczyuye-elektrolichylnyk-i-navishho-znimaty-pokaznyky-poyasnennya/" target="_blank" class="header-button">Цікаво знати</a>
+</div>
+
+
+{% endblock %}
+
+
+
+

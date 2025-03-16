@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block header %}
+
+<div class="email-title">
+    <img src="{% static 'img/user.png' %}" title="{{ email }}">
+    <p title="{{ email }}">{{ email }}</p>
+</div>
+<a href="{% url 'home' %}" class="header-button"><p>Назад</p></a>
+
+{% endblock %}
+
+
+
+
+{% block content %}
+
+<div class="history">
+    <h2>Історія показників і рахунків</h2>
+    {% for meter_data in history_data %}
+        <h3>Лічильник №{{ meter_data.meter_number }}</h3>
+        <h4>Показники</h4>
+        <ul>
+            {% for reading in meter_data.readings %}
+                <li>{{ reading.date|date:"d-m-Y H:i:s" }} - День: {{ reading.day_kwh }} кВт⋅год, Ніч: {{ reading.night_kwh }} кВт⋅год</li>
+            {% endfor %}
+        </ul>
+        <h4>Рахунки</h4>
+        <ul>
+            {% for bill in meter_data.bills %}
+                <li>З {{ bill.prev_date|date:"d-m-Y H:i:s" }} по {{ bill.date|date:"d-m-Y H:i:s" }} - {{ bill.total_price|floatformat:2 }} грн</li>
+            {% endfor %}
+        </ul>
+
+    {% endfor %}
+</div>
+
+{% endblock %}
+
+
+
+

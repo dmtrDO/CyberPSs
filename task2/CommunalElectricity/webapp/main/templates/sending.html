@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block header %}
+
+<div class="email-title">
+    <img src="{% static 'img/user.png' %}" title="{{ email }}">
+    <p title="{{ email }}">{{ email }}</p>
+</div>
+<a href="{% url 'home' %}" class="header-button"><p>Назад</p></a>
+
+{% endblock %}
+
+
+
+
+{% block content %}
+
+<form method="POST" class="sending-form" id="send-form" novalidate>
+    {% csrf_token %}
+    <p>Виберіть лічильник</p>
+    {{ form.choiceMeter }}
+    <p>Введіть значення (кВт⋅год) лічильника (значущі цифри до коми)</p>
+    {{ form.dayValue }}
+    {{ form.nightValue }}
+    <button type="submit" class="header-button">Відправити</button>
+    <p class="send-form-error">{{ error }}</p>
+</form>
+<div class="help">
+    <p>Якщо виникають труднощі при спробі зняти показники натисніть на кнопку нижче - це посилання на відео з роз'ясненнями</p>
+    <a href="https://www.youtube.com/watch?v=omUY9oBA7Z0" target="_blank" class="header-button">Тиць</a>
+</div>
+
+{% endblock %}
+
+
+
+
