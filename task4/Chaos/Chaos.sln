@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.36001.139
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Chaos", "Chaos\Chaos.pyproj", "{8162C21E-EA7B-4F7F-99F6-77BB9FAB7671}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8162C21E-EA7B-4F7F-99F6-77BB9FAB7671}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8162C21E-EA7B-4F7F-99F6-77BB9FAB7671}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C9408721-5D1F-4A73-BE3A-B559413580D6}
+	EndGlobalSection
+EndGlobal
